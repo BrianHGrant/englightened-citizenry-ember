@@ -1,9 +1,10 @@
 import Ember from 'ember';
+import config from '../config/environment';
 
 export default Ember.Route.extend({
   model: function() {
-      var url = "http://congress.api.sunlightfoundation.com/upcoming_bills?apikey=42b1bb92d794449693ab3438a2c7dce0&chamber=house&range=week&per_page=all";
-      debugger;
+    var key = config.myApiKey;
+      var url = "http://congress.api.sunlightfoundation.com/upcoming_bills?apikey=" +key+ "&per_page=all";
       return Ember.$.getJSON(url).then(function(responseJSON) {
 
         return responseJSON.results;
