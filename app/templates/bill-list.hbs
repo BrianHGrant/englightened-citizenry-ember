@@ -1,0 +1,8 @@
+<ul>
+  {{#each model as |bill|}}
+    <li><div>
+      <p>Official Title: {{bill.official_title}}</p>
+      <p>Chamber: {{bill.chamber}} | Introduced: {{bill.introduced_on}} | ID: {{bill.bill_id}} | Link: <a href="{{bill.urls.congress}}">Complete Bill</a> | Sponsor: {{bill.sponsor.first_name}} {{bill.sponsor.last_name}}, {{bill.sponsor.title}}</p>
+    </div></li>
+  {{/each}}
+</ul>
